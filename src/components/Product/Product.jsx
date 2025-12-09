@@ -13,8 +13,11 @@ const Product = () => {
   const products = useSelector((state) => state.products.items);
   console.log("products", products);
 
+  const cartSelector = useSelector((state) => state.cart.items);
+//   console.log("cartSelector", cartSelector.length);
+
   return (
-     <div className="product-grid">
+    <div className="product-grid">
       {products?.map((item) => (
         <div className="product-card" key={item.id}>
           <img className="product-img" src={item.thumbnail} alt={item.title} />
@@ -25,7 +28,21 @@ const Product = () => {
             <p className="product-brand">{item.brand}</p>
             <p className="product-price">₹ {item.price}</p>
 
-            <button className="add-btn" onClick={() => dispatch(addItem())}>Add to Cart</button>
+            {cartSelector.find((cartItem) => cartItem.id == item.id) ? (
+              <button
+                className="remove-from-cart-btn"
+                onClick={() => dispatch(removeItem(item))}
+              >
+                Remove from Cart
+              </button>
+            ) : (
+              <button
+                className="add-btn"
+                onClick={() => dispatch(addItem(item))}
+              >
+                Add to Cart
+              </button>
+            )}
           </div>
         </div>
       ))}

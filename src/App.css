@@ -196,6 +196,22 @@ header {
   margin-top: auto;
 }
 
+.remove-from-cart-btn{
+  background-color: rgb(255, 107, 107);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.remove-from-cart-btn{
+  background-color: red;
+}
+
 .add-btn:hover {
   background: #0056b3;
 }
