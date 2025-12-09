@@ -26,7 +26,7 @@ const Product = () => {
             <h3 className="product-title">{item.title}</h3>
             <p className="product-category">{item.category}</p>
             <p className="product-brand">{item.brand}</p>
-            <p className="product-price">₹ {item.price}</p>
+            <p className="product-price">$ {item.price}</p>
 
             {cartSelector.find((cartItem) => cartItem.id == item.id) ? (
               <button

@@ -2,6 +2,8 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Product from "./components/Product/Product";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CartList from "./components/CartList/CartList";
 // import { clearCart } from "./store/addToCart";
 
 function App() {
@@ -9,10 +11,13 @@ function App() {
 
   return (
     <>
-      <div>
+      <BrowserRouter>
         <Header />
-        <Product />
-      </div>
+        <Routes>
+          <Route path="/" element={<Product />}></Route>
+          <Route path="/cart" element={<CartList />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

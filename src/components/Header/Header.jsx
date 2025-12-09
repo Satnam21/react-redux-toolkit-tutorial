@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AddToCart from "../AddToCart/AddToCart";
 
 const Header = () => {
@@ -11,10 +12,10 @@ const Header = () => {
     </label>
 
     <nav className="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Products</a>
+      <Link to="/">Home</Link>
+      {/* <a href="#">Products</a>
       <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#">Contact</a> */}
     </nav>
 
    <AddToCart />
