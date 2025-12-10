@@ -11,7 +11,7 @@ const Product = () => {
   }, []);
 
   const products = useSelector((state) => state.products.items);
-  console.log("products", products);
+  // console.log("products", products);
 
   const cartSelector = useSelector((state) => state.cart.items);
 //   console.log("cartSelector", cartSelector.length);
